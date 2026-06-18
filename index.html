@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Centollo - Restaurante de Mariscos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <style>
+        
+    </style>
+
+<base target="_blank">
+</head>
+<body>
+    <!-- ENCABEZADO -->
+    <header>
+        <div class="logo-container">
+            <img src="imagenes/logo.png" alt="El Centollo">
+        </div>
+         <nav class="navbar">
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="paginas/menu.html">Menu</a></li>
+                <li><a href="paginas/contacto.html">Contacto</a></li>
+                <li><a href="paginas/ubicacion.html">Ubicación</a></li>
+                <li><a href="paginas/reservas.html">Reservas</a></li>
+                <li><a href="paginas/creditos.html">Creditos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MODAL CATÁLOGO DE PROMOCIONES - PLATOS DEL MENÚ -->
+    <div id="promoModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div class="modal-header">
+                <div class="modal-logo-wrap">
+                    <img src="imagenes/logo.png" alt="El Centollo" class="modal-logo">
+                </div>
+                <h2>Promociones del Mes</h2>
+                <p>Descuentos especiales en nuestros platos más populares</p>
+            </div>
+            <div class="modal-body">
+                <div class="promociones-grid">
+                    <!-- Promo 1: Mariscada -->
+                    <div class="promo-card">
+                        <span class="promo-badge">-20%</span>
+                        <img src="https://kimi-web-img.moonshot.cn/img/img-global.cpcdn.com/72931aa734570ba7cd98662857e62380e84cfad7.jpg" alt="Mariscada de crustáceos y centolla rellena" class="promo-img">
+                        <div class="promo-info">
+                            <h4>Mariscada de crustáceos y centolla rellena</h4>
+                            <p>Centolla viva, conchas finas, gambas frescas, limón, ajos y perejil.</p>
+                            <div class="promo-descuento">
+                                <i class="fas fa-tag"></i>
+                                <span>20% de descuento</span>
+                            </div>
+                            <button class="promo-btn" onclick="closeModal()">Ordenar Ahora</button>
+                        </div>
+                    </div>
+                    <!-- Promo 2: Falsa mousse -->
+                    <div class="promo-card">
+                        <span class="promo-badge">-15%</span>
+                        <img src="https://kimi-web-img.moonshot.cn/img/www.misthermorecetas.com/465c27f766273f9c90c247a7589b4e085a75def3.jpg" alt="Falsa mousse de centollo" class="promo-img">
+                        <div class="promo-info">
+                            <h4>Falsa mousse de centollo en cucharitas</h4>
+                            <p>Huevos cocidos, palitos de cangrejo, mejillones, berberechos y mayonesa.</p>
+                            <div class="promo-descuento">
+                                <i class="fas fa-tag"></i>
+                                <span>15% de descuento</span>
+                            </div>
+                            <button class="promo-btn" onclick="closeModal()">Ordenar Ahora</button>
+                        </div>
+                    </div>
+                    <!-- Promo 3: Spaghetti -->
+                    <div class="promo-card">
+                        <span class="promo-badge">NUEVO</span>
+                        <img src="https://kimi-web-img.moonshot.cn/img/panepanna.es/e6eb9a9899d58f9f478070718e904a7427d584b3.jpg" alt="Spaghetti con carne de centolla" class="promo-img">
+                        <div class="promo-info">
+                            <h4>Spaghetti con carne de centolla</h4>
+                            <p>Centolla hervida, spaghetti, cebolla, ajo, tomate cherry y brandy.</p>
+                            <div class="promo-descuento">
+                                <i class="fas fa-star"></i>
+                                <span>Plato especial del mes</span>
+                            </div>
+                            <button class="promo-btn" onclick="closeModal()">Ordenar Ahora</button>
+                        </div>
+                    </div>
+                    <!-- Promo 4: Crema de centolla -->
+                    <div class="promo-card">
+                        <span class="promo-badge">-25%</span>
+                        <img src="https://kimi-web-img.moonshot.cn/img/img-global.cpcdn.com/60d1e36635a1ed9e7df7aee22253916d72e61a1c.jpg" alt="Crema de centolla" class="promo-img">
+                        <div class="promo-info">
+                            <h4>Crema de centolla con crujiente de pan</h4>
+                            <p>Centollas cocidas, cebolla, leche, maicena, nuez moscada y pan tostado.</p>
+                            <div class="promo-descuento">
+                                <i class="fas fa-tag"></i>
+                                <span>25% de descuento</span>
+                            </div>
+                            <button class="promo-btn" onclick="closeModal()">Ordenar Ahora</button>
+                        </div>
+                    </div>
+                    <!-- Promo 5: Paella -->
+                    <div class="promo-card">
+                        <span class="promo-badge">2x1</span>
+                        <img src="https://kimi-web-img.moonshot.cn/img/content-cocina.lecturas.com/460ad6d3432bda5aebe1f3498ef2c3bb66019230.jpg" alt="Paella de mariscos" class="promo-img">
+                        <div class="promo-info">
+                            <h4>Paella de mariscos tradicional</h4>
+                            <p>Arroz bomba, gambas, mejillones, almejas, calamares, azafrán y caldo de pescado.</p>
+                            <div class="promo-descuento">
+                                <i class="fas fa-gift"></i>
+                                <span>2x1 en paellas</span>
+                            </div>
+                            <button class="promo-btn" onclick="closeModal()">Ordenar Ahora</button>
+                        </div>
+                    </div>
+                    <!-- Promo 6: Langosta -->
+                    <div class="promo-card">
+                        <span class="promo-badge">-30%</span>
+                        <img src="https://kimi-web-img.moonshot.cn/img/i0.wp.com/c81a8f5dd583959dbc75db7ec1e903194cb9693e.jpg" alt="Langosta a la parrilla" class="promo-img">
+                        <div class="promo-info">
+                            <h4>Langosta a la parrilla con mantequilla</h4>
+                            <p>Langostas frescas, mantequilla, ajo, limón, perejil y aceite de oliva.</p>
+                            <div class="promo-descuento">
+                                <i class="fas fa-tag"></i>
+                                <span>30% de descuento</span>
+                            </div>
+                            <button class="promo-btn" onclick="closeModal()">Ordenar Ahora</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <p>Las promociones son válidas hasta fin de mes. No acumulables con otros descuentos.</p>
+                <button class="modal-footer-btn" onclick="closeModal()">Ver Menú Completo</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDER -->
+    <section class="slider-section">
+        <div class="slider-container">
+            <div class="slider-images-wrapper">
+                <button class="slider-arrow prev" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+                <div class="slider-images" id="sliderImages">
+                    <div class="slide-image"><img src="imagenes/slide1.png" alt="Centollo"></div>
+                    <div class="slide-image"><img src="imagenes/slide 2.webp" alt="Cangrejo de rio"></div>
+                    <div class="slide-image"><img src="imagenes/slide 3.webp" alt="Cangrejo azul"></div>
+                    <div class="slide-image"><img src="imagenes/slide 4.jpg" alt="Cangrejo ermitano"></div>
+                    <div class="slide-image"><img src="imagenes/slide 5.jpg" alt="Cangrejo de las nieves"></div>
+                    <div class="slide-image"><img src="imagenes/slide 6.jpg" alt="Cangrejo real"></div>
+                </div>
+                <button class="slider-arrow next" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></button>
+                <div class="slider-dots">
+                    <span class="dot active" onclick="goToSlide(0)"></span>
+                    <span class="dot" onclick="goToSlide(1)"></span>
+                    <span class="dot" onclick="goToSlide(2)"></span>
+                    <span class="dot" onclick="goToSlide(3)"></span>
+                    <span class="dot" onclick="goToSlide(4)"></span>
+                    <span class="dot" onclick="goToSlide(5)"></span>
+                </div>
+            </div>
+            <div class="slide-info">
+                <h2>Centollo</h2>
+                <p>Tambien conocido como Changuro o Txangurro, Camara, Arana, Cranca, Pateiro, Brunno o Cangrejo velludo. Es un <strong>crustaceo braquiuro</strong> y decapodo. Pertenece a la familia Majidae, la misma que los Cangrejos. Vive en la costa en fondos rocosos o arenosos. Habita en profundidades mayores de 100m.</p>
+                <p><strong>Centollo</strong> <em>Maja squinado</em><br>
+                (Eng) Spinous spider crab<br>
+                (Fr) Araignee europeenne</p>
+                <div class="info-row">
+                    <span><strong>Peso</strong> 500 gr - 4 kg</span>
+                    <span><strong>Dimensiones</strong> 12 - 20 cm</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+   <footer class="main-footer">
+  <!-- Bloque Superior: Características (Fondo Oscuro) -->
+  <div class="footer-top">
+    <div class="footer-column">
+      <img src="imagenes/1911.png" alt="Icono Desde 1911" class="footer-icon">
+      <h3>MÁS DE 100 AÑOS</h3>
+      <p>Desde 1911 trabajando con el mejor producto del mar</p>
+    </div>
+    
+    <div class="footer-column">
+      <img src="imagenes/pez.png" alt="Icono Pescado" class="footer-icon">
+      <h3>EL PRODUCTO MÁS FRESCO</h3>
+      <p>Pescados y mariscos directos de la lonja</p>
+    </div>
+    
+    <div class="footer-column">
+      <img src="imagenes/nube.png" alt="Icono Ahumados" class="footer-icon">
+      <h3>AHUMADOS ARTESANALES</h3>
+      <p>Descubre nuestros procesos de ahumado</p>
+    </div>
+    
+    <div class="footer-column">
+      <img src="imagenes/tienda.png" alt="Icono Tienda" class="footer-icon">
+      <h3>TIENDA PROPIA</h3>
+      <p>También te servimos en nuestra tienda física</p>
+    </div>
+    
+    <div class="footer-column">
+      <img src="imagenes/caña.png" alt="Icono Caña" class="footer-icon">
+      <h3>SELECCIONAMOS POR TI</h3>
+      <p>Despreocúpate y disfruta del mejor género del mar</p>
+    </div>
+  </div>
+
+  <!-- Bloque Inferior: Contacto y Redes (Fondo Claro) -->
+  <div class="footer-bottom">
+    <!-- Información de Contacto Izquierda -->
+    <div class="footer-contact-info">
+      <div class="contact-item">
+        <span class="icon-geo">📍</span> Carrera 1 #93-50 Chicó Alto, Bogotá
+      </div>
+      <div class="contact-item">
+        <span class="icon-phone">📞</span> Tel: (57) 316 690 0508
+      </div>
+      <div class="contact-item">
+        <span class="icon-mail">✉️</span> servicioalcliente@tramonti.com.co
+      </div>
+    </div>
+
+    <!-- Redes Sociales Derecha -->
+    <div class="footer-social-media">
+      <a href="#" class="social-btn facebook"><img src="imagenes/facebook.png" alt="Facebook"></a>
+      <a href="#" class="social-btn twitter"><img src="imagenes/twitter.png" alt="Twitter"></a>
+      <a href="#" class="social-btn whatsapp"><img src="imagenes/whatssapp.jpg" alt="WhatsApp"></a>
+      <a href="#" class="social-btn telegram"><img src="imagenes/telegram.jpg" alt="Telegram"></a>
+      <a href="#" class="social-btn share"><img src="imagenes/compartir.png" alt="Compartir"></a>
+    </div>
+  </div>
+</footer>
+
+    <!-- CHATBOT FUTURISTA ROJO Y NEGRO - EL CENTOLLO -->
+    <div id="chatbot-container">
+        <div id="chatbot-window" class="chatbot-hidden">
+            <div class="chatbot-header">
+                <img src="imagenes/logo.png" alt="El Centollo" class="chatbot-logo">
+                <div class="chatbot-title">
+                    <h4>El Centollo</h4>
+                    <span class="chatbot-status">En linea</span>
+                </div>
+                <button class="chatbot-minimize" onclick="toggleChatbot()">−</button>
+            </div>
+            <div id="chatbot-messages" class="chatbot-messages">
+                <div class="chat-message bot">
+                    <div class="chat-bubble">Hola! Soy el asistente de El Centollo. En que puedo ayudarte hoy? Selecciona una pregunta:</div>
+                </div>
+            </div>
+            <div class="chatbot-questions">
+                <button onclick="askQuestion(0)"><i class="fas fa-clock"></i> <span>Cual es el horario de atencion?</span></button>
+                <button onclick="askQuestion(1)"><i class="fas fa-motorcycle"></i> <span>Hacen domicilios?</span></button>
+                <button onclick="askQuestion(2)"><i class="fas fa-utensils"></i> <span>Cual es el plato mas popular?</span></button>
+                <button onclick="askQuestion(3)"><i class="fas fa-calendar-check"></i> <span>Necesito reservar con anticipacion?</span></button>
+                <button onclick="askQuestion(4)"><i class="fas fa-leaf"></i> <span>Tienen opciones vegetarianas?</span></button>
+                <button onclick="askQuestion(5)"><i class="fas fa-credit-card"></i> <span>Aceptan tarjetas de credito?</span></button>
+                <button onclick="askQuestion(6)"><i class="fas fa-car"></i> <span>Tienen estacionamiento?</span></button>
+                <button onclick="askQuestion(7)"><i class="fas fa-glass-cheers"></i> <span>Hacen eventos privados?</span></button>
+                <button onclick="askQuestion(8)"><i class="fas fa-hourglass-half"></i> <span>Cual es el tiempo de espera promedio?</span></button>
+                <button onclick="askQuestion(9)"><i class="fas fa-child"></i> <span>Tienen menu infantil?</span></button>
+            </div>
+        </div>
+        <button id="chatbot-toggle" onclick="toggleChatbot()">
+            <i class="fas fa-robot"></i>
+        </button>
+    </div>
+
+    <script src="./js/index.js">
+       
+    </script>
+</body>
+</html>

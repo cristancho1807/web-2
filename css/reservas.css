@@ -1,0 +1,1005 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        /* ===== ENCABEZADO ===== */
+        header {
+            background: #fff;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .logo-container img {
+            max-height: 80px;
+        }
+
+        .navbar {
+            text-align: center;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .nav-menu li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1em;
+            padding: 5px 10px;
+            transition: color 0.3s;
+        }
+
+        .nav-menu li a.active {
+            color: #c0392b;
+            font-weight: bold;
+        }
+
+        .nav-menu li a:hover {
+            color: #c0392b;
+        }
+
+        /* ===== SECCIÓN RESERVAS - HEADER BEIGE ===== */
+        .reservas-header-box {
+            background: #f5f0e6;
+            padding: 50px 20px 30px;
+            text-align: center;
+        }
+
+        .reservas-title-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .reservas-title-wrapper::before {
+            content: '';
+            display: block;
+            width: 120px;
+            height: 1px;
+            background: #333;
+            margin: 0 auto 15px;
+        }
+
+        .reservas-title-wrapper::after {
+            content: '';
+            display: block;
+            width: 120px;
+            height: 1px;
+            background: #333;
+            margin: 15px auto 0;
+        }
+
+        .reservas-header-box h2 {
+            color: #333;
+            font-size: 1.8em;
+            font-style: italic;
+            font-weight: normal;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        .reservas-header-box p {
+            color: #555;
+            font-size: 0.95em;
+            margin-top: 25px;
+            font-style: normal;
+        }
+
+        /* ===== ÁREA DE CONTENIDO ===== */
+        .reservas-content-area {
+            background: #ffffff;
+            padding: 50px 20px 60px;
+            text-align: center;
+        }
+
+        .reservas-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        /* ===== QR CONTAINER ===== */
+        .qr-section {
+            text-align: center;
+        }
+
+        .qr-container {
+            display: inline-block;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .qr-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(192,57,43,0.03), transparent);
+            animation: qrShine 3s infinite;
+        }
+
+        @keyframes qrShine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .qr-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(192,57,43,0.2);
+        }
+
+        .qr-container img {
+            width: 280px;
+            height: 280px;
+            border-radius: 15px;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+
+        .qr-title {
+            font-size: 1.6em;
+            color: #000000;
+            margin-top: 20px;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            position: relative;
+            z-index: 1;
+        }
+
+        .qr-subtitle {
+            font-size: 1.1em;
+            color: #c0392b;
+            margin-top: 8px;
+            font-family: Arial, sans-serif;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .qr-hint {
+            font-size: 0.85em;
+            color: #888;
+            margin-top: 12px;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== FORMULARIO DE RESERVAS ===== */
+        .form-section {
+            background: #f8f8f8;
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .form-section:hover {
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .form-section h3 {
+            color: #333;
+            font-style: italic;
+            font-weight: normal;
+            font-size: 1.4em;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-section h3 i {
+            color: #c0392b;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            color: #555;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-family: 'Georgia', serif;
+            font-size: 0.95em;
+            color: #333;
+            transition: all 0.3s ease;
+            background: #fff;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #c0392b;
+            box-shadow: 0 0 0 3px rgba(192,57,43,0.1);
+            transform: translateY(-2px);
+        }
+
+        .form-group input:hover,
+        .form-group select:hover,
+        .form-group textarea:hover {
+            border-color: #c0392b;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #c0392b 0%, #8e1c1c 100%);
+            color: #fff;
+            border: none;
+            padding: 14px;
+            border-radius: 10px;
+            font-size: 1em;
+            font-family: 'Georgia', serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(192,57,43,0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(-1px);
+        }
+
+        /* ===== INFO CARDS ===== */
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1000px;
+            margin: 40px auto 0;
+        }
+
+        .info-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #c0392b, #8e1c1c);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .info-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(192,57,43,0.15);
+        }
+
+        .info-card i {
+            font-size: 2.5em;
+            color: #c0392b;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover i {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .info-card h4 {
+            color: #333;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .info-card p {
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        /* ===== MENSAJE DE CONFIRMACIÓN ===== */
+        .confirm-message {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+            z-index: 3000;
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .confirm-message.active {
+            display: block;
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .confirm-message i {
+            font-size: 4em;
+            color: #4a9c5d;
+            margin-bottom: 20px;
+            animation: checkBounce 0.6s ease;
+        }
+
+        @keyframes checkBounce {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .confirm-message h3 {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .confirm-message p {
+            color: #666;
+            font-size: 1em;
+        }
+
+        .confirm-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 2999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .confirm-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
+        
+        /* ===== TELÉFONO PARA RESERVAS ===== */
+        .phone-section {
+            background: linear-gradient(135deg, #f8f8f8 0%, #f5f0e6 100%);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .phone-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .phone-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #c0392b, #8e1c1c);
+        }
+
+        .phone-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(192,57,43,0.15);
+        }
+
+        .phone-container > i {
+            font-size: 3em;
+            color: #c0392b;
+            margin-bottom: 15px;
+            animation: phoneRing 2s infinite;
+        }
+
+        @keyframes phoneRing {
+            0%, 100% { transform: rotate(0deg); }
+            10% { transform: rotate(15deg); }
+            20% { transform: rotate(-15deg); }
+            30% { transform: rotate(10deg); }
+            40% { transform: rotate(-10deg); }
+            50% { transform: rotate(5deg); }
+            60% { transform: rotate(-5deg); }
+            70% { transform: rotate(0deg); }
+        }
+
+        .phone-container h3 {
+            color: #333;
+            font-style: italic;
+            font-weight: normal;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+
+        .phone-number {
+            color: #c0392b;
+            font-size: 2em;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            margin: 10px 0;
+            letter-spacing: 1px;
+        }
+
+        .phone-hint {
+            color: #888;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .phone-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #c0392b 0%, #8e1c1c 100%);
+            color: #fff;
+            text-decoration: none;
+            padding: 14px 35px;
+            border-radius: 30px;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(192,57,43,0.3);
+        }
+
+        .phone-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(192,57,43,0.5);
+        }
+
+        .phone-btn i {
+            margin-right: 8px;
+        }
+/* ===== FOOTER ===== */
+        .main-footer {
+            width: 100%;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .footer-top {
+            background-color: #1c1d1d;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 40px 50px;
+            gap: 20px;
+        }
+
+        .footer-column {
+            flex: 1;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .footer-icon {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .footer-column h3 {
+            color: #ded199;
+            font-size: 0.85rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin: 0 0 12px 0;
+        }
+
+        .footer-column p {
+            color: #b0b0b0;
+            font-size: 0.8rem;
+            line-height: 1.4;
+            margin: 0;
+            padding: 0 10px;
+        }
+
+        .footer-bottom {
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .contact-item {
+            color: #41b867;
+            font-family: 'Georgia', serif;
+            font-size: 1.1rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-social-media {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-btn {
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-radius: 6px;
+            overflow: hidden;
+            transition: transform 0.2s ease;
+        }
+
+        .social-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .social-btn img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ===== CHATBOT ===== */
+        #chatbot-container {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 999;
+        }
+
+        #chatbot-toggle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #c0392b 0%, #8e1c1c 100%);
+            color: #fff;
+            border: 3px solid #000;
+            font-size: 1.8em;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(192,57,43,0.6), 0 0 40px rgba(192,57,43,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            animation: botPulse 2s infinite;
+        }
+
+        @keyframes botPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(192,57,43,0.6), 0 0 40px rgba(192,57,43,0.3); }
+            50% { box-shadow: 0 0 30px rgba(192,57,43,0.8), 0 0 60px rgba(192,57,43,0.5); }
+        }
+
+        #chatbot-toggle:hover {
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        #chatbot-window {
+            position: absolute;
+            bottom: 85px;
+            right: 0;
+            width: 380px;
+            max-height: 550px;
+            background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(192,57,43,0.4), 0 10px 40px rgba(0,0,0,0.5);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid #c0392b;
+        }
+
+        #chatbot-window.chatbot-hidden {
+            display: none;
+        }
+
+        .chatbot-header {
+            background: linear-gradient(135deg, #c0392b 0%, #8e1c1c 100%);
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 2px solid #000;
+        }
+
+        .chatbot-logo {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #000;
+            padding: 3px;
+            border: 2px solid #fff;
+            box-shadow: 0 0 10px rgba(255,255,255,0.3);
+        }
+
+        .chatbot-title h4 {
+            margin: 0;
+            color: #fff;
+            font-size: 1.1em;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .chatbot-status {
+            color: #00ff88;
+            font-size: 0.8em;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .chatbot-status::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #00ff88;
+            border-radius: 50%;
+            animation: statusPulse 1.5s infinite;
+        }
+
+        @keyframes statusPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .chatbot-minimize {
+            margin-left: auto;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid #fff;
+            color: #fff;
+            font-size: 1.5em;
+            cursor: pointer;
+            padding: 2px 10px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .chatbot-minimize:hover {
+            background: rgba(192,57,43,0.8);
+            transform: scale(1.1);
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            max-height: 280px;
+            background: linear-gradient(180deg, #0d0d0d 0%, #1a1a1a 100%);
+        }
+
+        .chat-message {
+            margin-bottom: 15px;
+            display: flex;
+            animation: messageSlide 0.3s ease-out;
+        }
+
+        @keyframes messageSlide {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .chat-message.bot {
+            justify-content: flex-start;
+        }
+
+        .chat-message.user {
+            justify-content: flex-end;
+        }
+
+        .chat-bubble {
+            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            font-size: 0.9em;
+            line-height: 1.5;
+            position: relative;
+        }
+
+        .chat-message.bot .chat-bubble {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            color: #fff;
+            border-bottom-left-radius: 4px;
+            border: 1px solid #c0392b;
+            box-shadow: 0 2px 10px rgba(192,57,43,0.2);
+        }
+
+        .chat-message.user .chat-bubble {
+            background: linear-gradient(135deg, #c0392b 0%, #8e1c1c 100%);
+            color: #fff;
+            border-bottom-right-radius: 4px;
+            box-shadow: 0 2px 10px rgba(192,57,43,0.4);
+        }
+
+        .chatbot-questions {
+            padding: 12px 15px 15px;
+            background: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            max-height: 200px;
+            overflow-y: auto;
+            border-top: 1px solid #c0392b;
+        }
+
+        .chatbot-questions button {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            border: 1px solid #c0392b;
+            padding: 10px 14px;
+            border-radius: 12px;
+            text-align: left;
+            font-size: 0.85em;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Georgia', serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chatbot-questions button::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(135deg, #c0392b 0%, #8e1c1c 100%);
+            transition: width 0.3s ease;
+            z-index: 0;
+        }
+
+        .chatbot-questions button:hover::before {
+            width: 100%;
+        }
+
+        .chatbot-questions button:hover {
+            border-color: #fff;
+            transform: translateX(5px);
+            box-shadow: 0 0 15px rgba(192,57,43,0.4);
+        }
+
+        .chatbot-questions button span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .chatbot-questions button i {
+            color: #c0392b;
+            margin-right: 8px;
+            position: relative;
+            z-index: 1;
+            transition: color 0.3s;
+        }
+
+        .chatbot-questions button:hover i {
+            color: #fff;
+        }
+
+        .chatbot-messages::-webkit-scrollbar,
+        .chatbot-questions::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .chatbot-messages::-webkit-scrollbar-track,
+        .chatbot-questions::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+
+        .chatbot-messages::-webkit-scrollbar-thumb,
+        .chatbot-questions::-webkit-scrollbar-thumb {
+            background: #c0392b;
+            border-radius: 3px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .nav-menu {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .reservas-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-top {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .qr-container img {
+                width: 250px;
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #chatbot-window {
+                width: calc(100vw - 40px);
+                right: -10px;
+            }
+        }
+         /* ===== QR MÁS DINÁMICO ===== */
+        .qr-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .qr-container {
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px 50px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .qr-container:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+        }
+
+        .qr-container img {
+            width: 220px;
+            height: 220px;
+            transition: transform 0.3s ease;
+        }
+
+        .qr-container:hover img {
+            transform: scale(1.05);
+        }
+
+        .qr-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #222;
+            margin-top: 15px;
+            letter-spacing: 2px;
+        }
+
+        .qr-subtitle {
+            font-size: 1.1rem;
+            color: #b22222;
+            font-weight: 600;
+            margin: 5px 0;
+        }
+
+        .qr-hint {
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            color: #888;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        /* Centrar contenido verticalmente */
+        .reservas-content-area {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .reservas-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        /* Asegurar que footer quede abajo */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .main-footer {
+            margin-top: auto;
+        }
